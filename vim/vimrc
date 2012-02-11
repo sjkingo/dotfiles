@@ -1,0 +1,51 @@
+" tabs and indenting
+set shiftwidth=4
+set tabstop=8
+set expandtab
+set smarttab
+set backspace=indent,eol,start
+set autoindent
+
+" syntax highlighting
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+au BufNewFile,BufRead *.wsgi set filetype=python
+
+" search
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+" we're on unix people
+set fileformats=unix
+
+" no annoying bells when the keyboard is mashed
+set noerrorbells
+
+" change <leader> ` to ,
+let mapleader = ","
+
+" catch trailing whitespace on ,s
+nmap <silent> <leader>s :set nolist!<CR>
+
+command Wq wq
+
+" some random settings
+set ruler
+set notitle
+set pastetoggle=<F5>
+set autowrite
+
+" colourscheme (order is important!)
+set t_Co=256
+let g:zenburn_high_Contrast = 1
+colorscheme zenburn
+hi search ctermbg=223 ctermfg=238
+hi incsearch ctermbg=216 ctermfg=242
+
+" bash-style tabcomp
+set wildmenu
+set wildmode=list:longest
