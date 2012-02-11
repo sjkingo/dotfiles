@@ -1,0 +1,26 @@
+import atexit
+import os
+
+historyPath = os.path.expanduser('~/.pyhistory')
+
+try:
+    import readline
+except ImportError:
+    # sad, no completion for us
+    pass
+else:
+    import rlcompleter
+    readline.parse_and_bind('tab: complete')
+    if os.path.exists(historyPath):
+        readline.read_history_file(historyPath)
+
+def save_history(history_path=historyPath):
+    try:
+        import readline
+    except ImportError:
+        # sad, no history saving for us
+        pass
+    else:
+        readline.write_history_file(history_path)
+
+atexit.register(save_history)
