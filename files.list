@@ -4,6 +4,9 @@ bash/bash_logout ~/.bash_logout
 
 git/gitconfig ~/.gitconfig
 
+hg/hgrc ~/.hgrc
+hg/hgignore ~/.hgignore
+
 python/pythonrc ~/.pythonrc
 
 vim ~/.vim
