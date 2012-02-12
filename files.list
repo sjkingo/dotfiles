@@ -1,0 +1,10 @@
+bash/bashrc ~/.bashrc
+bash/bash_profile ~/.bash_profile
+bash/bash_logout ~/.bash_logout
+
+git/gitconfig ~/.gitconfig
+
+python/pythonrc ~/.pythonrc
+
+vim ~/.vim
+vim/vimrc ~/.vimrc
