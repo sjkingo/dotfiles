@@ -1,0 +1,23 @@
+"thunar"
+  m:0x0 + c:163
+
+"sudo /sbin/brightness.sh down"
+  m:0x0 + c:232
+
+"sudo /sbin/brightness.sh up"
+  m:0x0 + c:233
+
+"urxvt256c -e python"
+  m:0x0 + c:148
+
+#"quodlibet --next"
+#  m:0x0 + c:153
+
+#"quodlibet --prev"
+#  m:0x0 + c:144
+
+#"quodlibet --play-pause"
+#  m:0x0 + c:162
+
+#"quodlibet --show-window"
+#  m:0x0 + c:164

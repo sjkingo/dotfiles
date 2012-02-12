@@ -19,3 +19,4 @@ vim/vimrc ~/.vimrc
 
 X11/xinitrc ~/.xinitrc
 X11/Xdefaults ~/.Xdefaults
+X11/xbindkeysrc ~/.xbindkeysrc
