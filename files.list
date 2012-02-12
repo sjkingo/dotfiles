@@ -12,6 +12,8 @@ gtk/gmrunrc ~/.gmrunrc
 hg/hgrc ~/.hgrc
 hg/hgignore ~/.hgignore
 
+irssi ~/.irssi
+
 misc/gdbinit ~/.gdbinit
 misc/rtorrent.rc ~/.rtorrent.rc
 
