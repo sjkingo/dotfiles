@@ -8,3 +8,6 @@ python/pythonrc ~/.pythonrc
 
 vim ~/.vim
 vim/vimrc ~/.vimrc
+
+X11/xinitrc ~/.xinitrc
+X11/Xdefaults ~/.Xdefaults
