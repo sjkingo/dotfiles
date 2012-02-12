@@ -7,6 +7,7 @@ bash/bash_logout ~/.bash_logout
 git/gitconfig ~/.gitconfig
 
 gtk/gtkrc-2.0 ~/.gtkrc-2.0
+gtk/gmrunrc ~/.gmrunrc
 
 hg/hgrc ~/.hgrc
 hg/hgignore ~/.hgignore
