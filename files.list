@@ -12,6 +12,9 @@ gtk/gmrunrc ~/.gmrunrc
 hg/hgrc ~/.hgrc
 hg/hgignore ~/.hgignore
 
+misc/gdbinit ~/.gdbinit
+misc/rtorrent.rc ~/.rtorrent.rc
+
 python/pythonrc ~/.pythonrc
 
 vim ~/.vim
