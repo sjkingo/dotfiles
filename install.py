@@ -13,17 +13,20 @@ def confirm(prompt_prefix):
         return False
 
 def install_file(src, dest):
-    if os.path.exists(dest):
+    if os.path.lexists(dest):
         # return if this file has already been installed, or confirm to override if it hasn't
-        if os.path.samefile(src, dest):
-            print('%s has already been installed to %s' % (src, dest))
-            return
+        try:
+            if os.path.samefile(src, dest):
+                print('%s has already been installed to %s' % (src, dest))
+                return
+        except OSError:
+            pass
         do_install = confirm('%s: destination %s already exists: override? (a backup will be created first)' % (src, dest))
     else:
         do_install = confirm('%s: install to %s?' % (src, dest))
 
     if do_install:
-        if os.path.exists(dest):
+        if os.path.lexists(dest):
             bkp_path = dest + '.bkp'
             if os.path.exists(bkp_path):
                 print('%s: backup %s already exists... please remove it' % (src, bkp_path))
