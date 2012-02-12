@@ -15,11 +15,14 @@ hg/hgignore ~/.hgignore
 misc/gdbinit ~/.gdbinit
 misc/rtorrent.rc ~/.rtorrent.rc
 
+mplayer ~/.mplayer
+
 python/pythonrc ~/.pythonrc
 
 vim ~/.vim
 vim/vimrc ~/.vimrc
 
 X11/xinitrc ~/.xinitrc
+X11/xinitrc ~/.Xsession
 X11/Xdefaults ~/.Xdefaults
 X11/xbindkeysrc ~/.xbindkeysrc
