@@ -1,3 +1,5 @@
+awesome ~/.config/awesome
+
 bash/bashrc ~/.bashrc
 bash/bash_profile ~/.bash_profile
 bash/bash_logout ~/.bash_logout
