@@ -44,7 +44,7 @@ def install_file(src, dest, write_backup=False):
             os.rename(dest, bkp_path)
 
         # otherwise, remove the dest
-        if not write_backup:
+        if not write_backup and os.path.lexists(dest):
             if os.path.isdir(dest):
                 shutil.rmtree(dest)
             else:
