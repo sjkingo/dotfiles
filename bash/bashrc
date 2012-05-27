@@ -5,6 +5,7 @@ fi
 
 source /etc/bashrc
 
+export EDITOR="/usr/bin/vim"
 export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] "
 export PATH="$PATH:/home/sam/scripts:/home/sam/bin"
 
@@ -40,3 +41,5 @@ shopt -s checkwinsize
 ulimit -c 4000
 
 export PGUSER="postgres"
+
+export TERM="xterm-256color"
