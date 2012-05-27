@@ -1,5 +1,5 @@
 servers = (
-  { address = "irc6.oftc.net"; chatnet = "oftc"; port = "6667"; }
+  { address = "irc.oftc.net"; chatnet = "oftc"; port = "6667"; }
 );
 
 chatnets = {
@@ -10,6 +10,7 @@ chatnets = {
     max_whois = "4";
     max_query_chans = "5";
   };
+  oftc = { type = "IRC"; };
 };
 
 channels = ( { name = "#attic"; chatnet = "oftc"; autojoin = "Yes"; } );
