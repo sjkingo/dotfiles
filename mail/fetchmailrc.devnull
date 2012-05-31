@@ -1,0 +1,7 @@
+poll imap.gmail.com proto imap
+    user "sam@sjkwi.com.au"
+    ssl
+    idle
+    folder "devnull"
+    keep
+    mda "sinkhole"

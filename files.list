@@ -14,7 +14,8 @@ hg/hgignore ~/.hgignore
 
 irssi ~/.irssi
 
-mail/fetchmailrc ~/.fetchmailrc
+mail/fetchmailrc.devnull ~/.fetchmailrc.devnull
+mail/fetchmailrc.uq ~/.fetchmailrc.uq
 
 misc/gdbinit ~/.gdbinit
 misc/rtorrent.rc ~/.rtorrent.rc

@@ -5,11 +5,3 @@ poll exchange.uq.edu.au proto imap
     no rewrite
     keep
     mda "formail -I 'Delivered-To: s.kingston@uq.edu.au' | /usr/sbin/sendmail sam@sjkwi.com.au"
-
-poll imap.gmail.com proto imap
-    user "sam@sjkwi.com.au"
-    ssl
-    idle
-    folder "devnull"
-    keep
-    mda "sinkhole"
