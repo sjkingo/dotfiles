@@ -5,6 +5,8 @@ fi
 
 if [ -r /etc/bashrc ] ; then
     source /etc/bashrc
+elif [ -r /etc/bash.bashrc ] ; then
+    source /etc/bash.bashrc
 fi
 
 export EDITOR="/usr/bin/vim"
