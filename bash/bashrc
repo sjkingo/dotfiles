@@ -3,14 +3,18 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
-source /etc/bashrc
+if [ -r /etc/bashrc ] ; then
+    source /etc/bashrc
+fi
 
 export EDITOR="/usr/bin/vim"
 export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] "
 export PATH="$PATH:/home/sam/scripts:/home/sam/bin:$HOME/dotfiles/bin"
 
 # android sdk
-export PATH="$PATH:/home/sam/android-sdk-linux/tools:/home/sam/android-sdk-linux/platform-tools"
+if [ -d ~/android-sdk-linux ] ; then
+    export PATH="$PATH:/home/sam/android-sdk-linux/tools:/home/sam/android-sdk-linux/platform-tools"
+fi
 
 # history control
 export HISTFILESIZE="5000"
