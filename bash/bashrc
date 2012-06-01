@@ -11,25 +11,23 @@ fi
 
 export EDITOR="/usr/bin/vim"
 export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] "
-export PATH="$PATH:/home/sam/scripts:/home/sam/bin:$HOME/dotfiles/bin"
+export PATH="$PATH:$HOME/scripts:$HOME/bin:$HOME/dotfiles/bin"
+export PGUSER="postgres"
+export TERM="xterm-256color"
 
-# android sdk
-if [ -d ~/android-sdk-linux ] ; then
-    export PATH="$PATH:/home/sam/android-sdk-linux/tools:/home/sam/android-sdk-linux/platform-tools"
-fi
-
-# history control
 export HISTFILESIZE="5000"
 export HISTCONTROL="ignoreboth"
 export PROMPT_COMMAND="history -a"
 shopt -s histappend
 
-# python
+if [ -d ~/android-sdk-linux ] ; then
+    export PATH="$PATH:$HOME/android-sdk-linux/tools:$HOME/android-sdk-linux/platform-tools"
+fi
+
 if [ -r ~/.pythonrc ] ; then
     export PYTHONSTARTUP=~/.pythonrc
 fi
 
-# global commands
 alias df="df -h"
 alias grep="grep --color"
 alias ll="ls -Fhl"
@@ -37,15 +35,8 @@ alias lsa="ls -aFhl"
 alias rm="rm -i"
 alias w="w -f"
 
-# allow minor typos in cd paths
 shopt -s cdspell
-
-# redraw the window when returning from a command
 shopt -s checkwinsize
 
 # 4M core dumps please
 ulimit -c 4000
-
-export PGUSER="postgres"
-
-export TERM="xterm-256color"
