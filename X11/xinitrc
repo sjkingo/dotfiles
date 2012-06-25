@@ -3,4 +3,5 @@
 thunar --daemon &
 urxvt256cd &
 xscreensaver &
+xsetroot -cursor_name left_ptr
 exec -l $SHELL -c "$CK_XINIT_SESSION $SSH_AGENT /usr/bin/awesome"
