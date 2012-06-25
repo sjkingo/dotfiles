@@ -23,6 +23,7 @@ misc/rtorrent.rc ~/.rtorrent.rc
 mplayer ~/.mplayer
 
 python/pythonrc ~/.pythonrc
+python/local-packages ~/.local/lib/python2.7/site-packages
 
 vim ~/.vim
 vim/vimrc ~/.vimrc
