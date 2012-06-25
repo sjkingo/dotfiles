@@ -284,14 +284,14 @@ for i = 1, keynumber do
                   end),
         awful.key({ modkey, "Shift" }, "#" .. i + 9,
                   function ()
-                      if client.focus and tags[screen][i] then
-                          awful.client.movetotag(tags[screen][i])
+                      if client.focus and tags[client.focus.screen][i] then
+                          awful.client.movetotag(tags[client.focus.screen][i])
                       end
                   end),
         awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
                   function ()
-                      if client.focus and tags[screen][i] then
-                          awful.client.toggletag(tags[screen][i])
+                      if client.focus and tags[client.focus.screen][i] then
+                          awful.client.toggletag(tags[client.focus.screen][i])
                       end
                   end))
 end
