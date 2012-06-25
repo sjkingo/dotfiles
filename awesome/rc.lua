@@ -321,6 +321,10 @@ awful.rules.rules = {
     { rule = { class = "qemu" },
       properties = { floating = true } },
 
+    -- flash player 11 full screen
+    { rule = { class = "Exe" },
+      properties = { floating = true } },
+
     { rule = { class = "chrome" },
       properties = { tag = tags[validate_screen(2)][2] } },
     { rule = { class = "Quodlibet" },
