@@ -50,7 +50,10 @@ def install_file(src, dest, write_backup=False):
             else:
                 os.remove(dest)
 
-        os.makedirs(os.path.dirname(dest))
+        try:
+            os.makedirs(os.path.dirname(dest))
+        except OSError:
+            pass
 
         # install
         os.symlink(src, dest)
