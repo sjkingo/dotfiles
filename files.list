@@ -21,8 +21,10 @@ misc/gdbinit ~/.gdbinit
 misc/rtorrent.rc ~/.rtorrent.rc
 
 mplayer ~/.mplayer
+mplayer/mplayer.desktop ~/.local/share/applications/mplayer.desktop
 
 python/pythonrc ~/.pythonrc
+python/local-packages ~/.local/lib/python2.7/site-packages
 
 vim ~/.vim
 vim/vimrc ~/.vimrc

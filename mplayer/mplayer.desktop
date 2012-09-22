@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=mplayer
+GenericName=mplayer
+Comment=
+Exec=/usr/bin/mplayer %U
+Terminal=false
+Type=Application

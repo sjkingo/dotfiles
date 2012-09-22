@@ -14,8 +14,8 @@
 max_uploads = 2
 
 # Global upload and download rate in KiB. "0" for unlimited.
-download_rate = 750
-upload_rate = 10
+download_rate = 1000
+upload_rate = 30
 
 # Default directory to save the downloaded torrents.
 directory = ./Downloads/torrents
@@ -27,7 +27,7 @@ session = ./Downloads/torrents/.session
 
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
-#schedule = watch_directory,5,5,load_start=./Downloads/torrents/watch/*.torrent
+schedule = watch_directory,5,5,load_start=./Downloads/torrents/watch/*.torrent
 #schedule = untied_directory,5,5,stop_untied=
 
 # Close torrents when diskspace is low.
@@ -49,10 +49,10 @@ session = ./Downloads/torrents/.session
 #bind = rakshasa.no
 
 # Port range to use for listening.
-#port_range = 6890-6999
+port_range = 6988-6988
 
 # Start opening ports at a random position within the port range.
-#port_random = no
+port_random = no
 
 # Check hash for finished torrents. Might be usefull until the bug is
 # fixed that causes lack of diskspace not to be properly reported.

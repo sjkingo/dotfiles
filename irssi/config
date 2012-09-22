@@ -10,7 +10,7 @@ servers = (
     port = "6697";
     autoconnect = true;
     use_ssl = "yes";
-}
+  }
 );
 
 chatnets = {
