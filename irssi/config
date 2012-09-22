@@ -1,5 +1,16 @@
 servers = (
-  { address = "irc.oftc.net"; chatnet = "oftc"; port = "6667"; }
+  { address = "irc6.oftc.net";
+    chatnet = "oftc";
+    port = "6697";
+    autoconnect = true;
+    use_ssl = "yes";
+  },
+  { address = "roddenberry.freenode.net";
+    chatnet = "freenode";
+    port = "6697";
+    autoconnect = true;
+    use_ssl = "yes";
+}
 );
 
 chatnets = {
@@ -9,11 +20,20 @@ chatnets = {
     max_msgs = "5";
     max_whois = "4";
     max_query_chans = "5";
+    autosendcmd = "/msg nickserv identify cn39mccd ; wait 10000";
   };
-  oftc = { type = "IRC"; };
+  freenode = {
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "5";
+    max_whois = "4";
+    max_query_chans = "5";
+    autosendcmd = "/msg nickserv identify cn39mccd ; wait 10000";
+  };
 };
 
-channels = ( { name = "#attic"; chatnet = "oftc"; autojoin = "Yes"; } );
+channels = ( { name = "#attic"; chatnet = "oftc"; autojoin = "Yes"; },
+             { name = "#fedora"; chatnet = "freenode"; autojoin = "Yes"; } );
 
 statusbar = {
   # formats:
