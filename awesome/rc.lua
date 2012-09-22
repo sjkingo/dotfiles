@@ -320,6 +320,8 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "qemu" },
       properties = { floating = true } },
+    { rule = { class = "gimp" },
+      properties = { floating = true } },
 
     -- flash player 11 full screen
     { rule = { class = "Exe" },
