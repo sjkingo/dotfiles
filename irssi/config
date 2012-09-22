@@ -33,7 +33,9 @@ chatnets = {
 };
 
 channels = ( { name = "#attic"; chatnet = "oftc"; autojoin = "Yes"; },
-             { name = "#fedora"; chatnet = "freenode"; autojoin = "Yes"; } );
+             { name = "#fedora"; chatnet = "freenode"; autojoin = "Yes"; },
+             { name = "#funtoo"; chatnet = "freenode"; autojoin = "Yes"; },
+);
 
 statusbar = {
   # formats:
