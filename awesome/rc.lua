@@ -321,6 +321,8 @@ awful.rules.rules = {
       properties = { tag = tags[validate_screen(1)][3] } },
     { rule = { class = "VirtualBox" },
       properties = { tag = tags[validate_screen(2)][9] } },
+    { rule = { class = "vmplayer" },
+      properties = { tag = tags[validate_screen(2)][9] } },
 }
 -- }}}
 
