@@ -158,20 +158,8 @@ wicked.register(memwidget, wicked.widgets.mem,
 
 netwidget = widget({ type = "textbox", name = "netwidget" })
 wicked.register(netwidget, wicked.widgets.net, 
-        "<span color='white'>p1p1</span>: ${p1p1 down}/${p1p1 up} | <span color='white'>Battery:</span> ", 
+        "<span color='white'>em1</span>: ${em1 down}/${em1 up} ", 
         nil, nil, 2)
-netwidget2 = widget({ type = "textbox", name = "netwidget2" })
-wicked.register(netwidget2, wicked.widgets.net, 
-        "<span color='white'>wlan0</span>: ${wlan0 down}/${wlan0 up} | ",
-        nil, nil, 2)
-
-batterybox = widget ({ type = "textbox", name = "battery", align = "left" })
-wicked.register(batterybox, 'function', function (widget, args)
-   local filedescriptor = io.popen('acpitool -b | awk \'{print $5}\'')
-   local value = filedescriptor:read()
-   filedescriptor:close()
-   return value
-end, 30)
 
 -- {{{ Add a status bar to the bottom of the last screen
 mystatusbar = awful.wibox({ position = "bottom", screen = screen.count() })
@@ -180,9 +168,7 @@ mystatusbar.widgets = {
     datewidget,
     cpugraphwidget,
     memwidget,
-    batterybox,
     netwidget,
-    netwidget2,
     layout = awful.widget.layout.horizontal.rightleft
 }
 -- }}}
