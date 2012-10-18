@@ -28,7 +28,7 @@ URxvt*color7: #D3D7CF
 URxvt*color15: #EEEEEC
 
 # pretty fonts
-URxvt*font: xft:Monospace:pixelsize=13:antialias=true
+URxvt*font: xft:Monospace:pixelsize=17:antialias=true
 URxvt*letterSpace: -1
 
 # clickable URLs
