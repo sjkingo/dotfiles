@@ -33,7 +33,7 @@ URxvt*letterSpace: -1
 
 # clickable URLs
 URxvt.perl-ext-common: default,matcher,clipboard
-URxvt.urlLauncher: /usr/bin/google-chrome
+URxvt.url-launcher: /bin/google-chrome
 URxvt.matcher.button: 1
 
 # misc settings
