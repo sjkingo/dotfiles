@@ -3,6 +3,7 @@
 urxvt256cd &
 xscreensaver &
 nagstamon &
+xbindkeys &
 xsetroot -cursor_name left_ptr
 awsetbg -r "/srv/pictures/Wallpapers 2560x1440"
 exec -l $SHELL -c "$SSH_AGENT /usr/bin/awesome"
