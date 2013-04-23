@@ -39,8 +39,11 @@ fi
 if [ -d ~/scripts ] ; then
     export PATH="$PATH:$HOME/scripts"
 fi
-if [ -d ~/android-sdk-linux ] ; then
-    export PATH="$PATH:$HOME/android-sdk-linux/tools:$HOME/android-sdk-linux/platform-tools"
+if [ -d ~/android-sdk ] ; then
+    export PATH="$PATH:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools"
+fi
+if [ -d /opt/bin ] ; then
+    export PATH="$PATH:/opt/bin"
 fi
 
 if [ -r ~/.pythonrc ] ; then
