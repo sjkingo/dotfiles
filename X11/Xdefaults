@@ -35,6 +35,7 @@ URxvt*letterSpace: -1
 URxvt.perl-ext-common: default,matcher,clipboard
 URxvt.url-launcher: /bin/google-chrome
 URxvt.matcher.button: 1
+URxvt.colorUL: #4682B4
 
 # misc settings
 URxvt*saveLines: 10000
