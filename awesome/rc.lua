@@ -5,17 +5,28 @@ require("beautiful")
 require("naughty")
 require("wicked")
 
--- {{{ Validate the given screen number, returning either x (if valid),
---     or the maximum screen index. This lets us handle placing a client
---     on a non-existant screen (it will default to the highest screen #).
---     This is useful for dynamic multi-screen setups where all screens
---     aren't always present (e.g. laptop with external display).
-function validate_screen(x)
-    if x > screen.count() then
-        return screen.count()
-    else
-        return x
-    end
+-- {{{ Error handling
+-- Check if awesome encountered an error during startup and fell back to
+-- another config (This code will only ever execute for the fallback config)
+if awesome.startup_errors then
+    naughty.notify({ preset = naughty.config.presets.critical,
+                     title = "Oops, there were errors during startup!",
+                     text = awesome.startup_errors })
+end
+
+-- Handle runtime errors after startup
+do
+    local in_error = false
+    awesome.add_signal("debug::error", function (err)
+        -- Make sure we don't go into an endless error loop
+        if in_error then return end
+        in_error = true
+
+        naughty.notify({ preset = naughty.config.presets.critical,
+                         title = "Oops, an error happened!",
+                         text = err })
+        in_error = false
+    end)
 end
 -- }}}
 
@@ -34,6 +45,7 @@ altkey = "Mod1"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {
+    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
@@ -44,20 +56,17 @@ layouts =
     awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
-    awful.layout.suit.floating
+    awful.layout.suit.magnifier
 }
 -- }}}
 
 -- {{{ Tags
-tags = {}
+tags = {
+    names  = { 1, "chrome", "pidgin", 4, 5, 6, 7, "music", "floating" },
+    layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[1] }
+}
 for s = 1, screen.count() do
-    if s == 3 then
-        l = awful.layout.suit.tile.left
-    else
-        l = awful.layout.suit.tile.right
-    end
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, l)
+    tags[s] = awful.tag(tags.names, s, tags.layout)
 end
 -- }}}
 
@@ -76,11 +85,17 @@ mytaglist.buttons = awful.util.table.join(
 mytasklist = {}
 mytasklist.buttons = awful.util.table.join(
                      awful.button({ }, 1, function (c)
-                                              if not c:isvisible() then
-                                                  awful.tag.viewonly(c:tags()[1])
+                                              if c == client.focus then
+                                                  c.minimized = true
+                                              else
+                                                  if not c:isvisible() then
+                                                      awful.tag.viewonly(c:tags()[1])
+                                                  end
+                                                  -- This will also un-minimize
+                                                  -- the client, if needed
+                                                  client.focus = c
+                                                  c:raise()
                                               end
-                                              client.focus = c
-                                              c:raise()
                                           end),
                      awful.button({ }, 3, function ()
                                               if instance then
@@ -127,7 +142,7 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
-        s == validate_screen(2) and mysystray or nil,
+        mysystray,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
@@ -299,6 +314,8 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
+                     maximized_vertical   = false,
+                     maximized_horizontal = false,
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
@@ -308,21 +325,20 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-
     -- flash player 11 full screen
     { rule = { class = "Exe" },
       properties = { floating = true } },
 
     { rule = { class = "chrome" },
-      properties = { tag = tags[validate_screen(2)][2] } },
-    { rule = { class = "Quodlibet" },
-      properties = { tag = tags[validate_screen(3)][8] } },
+      properties = { tag = tags[2] } },
+    { rule = { class = "rhythmbox" },
+      properties = { tag = tags[8] } },
     { rule = { class = "Pidgin" },
-      properties = { tag = tags[validate_screen(1)][3] } },
+      properties = { tag = tags[3] } },
     { rule = { class = "VirtualBox" },
-      properties = { tag = tags[validate_screen(2)][9] } },
+      properties = { tag = tags[9] } },
     { rule = { class = "vmplayer" },
-      properties = { tag = tags[validate_screen(2)][9] } },
+      properties = { tag = tags[9] } },
 }
 -- }}}
 
