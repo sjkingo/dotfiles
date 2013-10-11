@@ -1,2 +1,5 @@
-"nautilus"
+"nemo"
   m:0x0 + c:179
+
+"amixer sset Master toggle"
+  m:0x0 + c:121
