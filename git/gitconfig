@@ -4,3 +4,10 @@
 
 [color]
     ui = auto
+[push]
+	default = simple
+[diff]
+	algorithm = patience
+
+[alias]
+    bo = reset --soft HEAD^
