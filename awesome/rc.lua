@@ -329,16 +329,16 @@ awful.rules.rules = {
     { rule = { class = "Exe" },
       properties = { floating = true } },
 
-    { rule = { class = "chrome" },
-      properties = { tag = tags[2] } },
-    { rule = { class = "rhythmbox" },
-      properties = { tag = tags[8] } },
-    { rule = { class = "Pidgin" },
-      properties = { tag = tags[3] } },
-    { rule = { class = "VirtualBox" },
-      properties = { tag = tags[9] } },
-    { rule = { class = "vmplayer" },
-      properties = { tag = tags[9] } },
+    --{ rule = { class = "chrome" },
+    --  properties = { tag = tags[2] } },
+    --{ rule = { class = "rhythmbox" },
+    --  properties = { tag = tags[8] } },
+    --{ rule = { class = "Pidgin" },
+    --  properties = { tag = tags[3] } },
+    --{ rule = { class = "VirtualBox" },
+    --  properties = { tag = tags[9] } },
+    --{ rule = { class = "vmplayer" },
+    --  properties = { tag = tags[9] } },
 }
 -- }}}
 
