@@ -1,14 +1,16 @@
 servers = (
-  { address = "irc6.oftc.net";
+  {
+    address = "irc6.oftc.net";
     chatnet = "oftc";
     port = "6697";
-    autoconnect = true;
+    autoconnect = "false";
     use_ssl = "yes";
   },
-  { address = "roddenberry.freenode.net";
+  {
+    address = "roddenberry.freenode.net";
     chatnet = "freenode";
     port = "6697";
-    autoconnect = true;
+    autoconnect = true"";
     use_ssl = "yes";
   }
 );
@@ -32,9 +34,11 @@ chatnets = {
   };
 };
 
-channels = ( { name = "#attic"; chatnet = "oftc"; autojoin = "Yes"; },
-             { name = "#fedora"; chatnet = "freenode"; autojoin = "Yes"; },
-             { name = "#funtoo"; chatnet = "freenode"; autojoin = "Yes"; },
+channels = (
+  { name = "#attic"; chatnet = "oftc"; autojoin = "Yes"; },
+  { name = "#fedora"; chatnet = "freenode"; autojoin = "Yes"; },
+  { name = "#funtoo"; chatnet = "freenode"; autojoin = "Yes"; },
+  { name = "#mezzanine"; chatnet = "freenode"; autojoin = "Yes"; }
 );
 
 statusbar = {
@@ -156,4 +160,5 @@ settings = {
     resolve_prefer_ipv6 = "yes";
   };
   "fe-text" = { actlist_sort = "refnum"; };
+  "perl/core/scripts" = { autoaway_timeout = "600"; };
 };
