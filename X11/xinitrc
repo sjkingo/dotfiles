@@ -11,7 +11,7 @@ urxvt256cd &
 xscreensaver &
 xbindkeys &
 xsetroot -cursor_name left_ptr
-#awsetbg -r "/srv/pictures/Wallpapers 2560x1440"
+/home/sam/bin/rotate_wallpaper.sh &
 
 export BROWSER="`which google-chrome`"
 
