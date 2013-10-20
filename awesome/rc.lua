@@ -3,6 +3,7 @@ awful.rules = require("awful.rules")
 require("awful.autofocus")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
+local scratch = require("scratch")
 local vicious = require("vicious")
 local wibox = require("wibox")
 
@@ -245,6 +246,7 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey,	          }, "F2", function () awful.util.spawn(run) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
+    awful.key({ modkey,           }, "`", function () scratch.drop(terminal, "top", "center", 1, 0.5) end),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
