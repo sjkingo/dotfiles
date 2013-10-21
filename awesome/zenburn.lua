@@ -8,7 +8,6 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper_cmd = { "xsri --color=black" }
 -- }}}
 
 -- {{{ Styles
@@ -17,10 +16,10 @@ theme.font      = "Liberation Sans 10"
 -- {{{ Colors
 theme.fg_normal  = "#DCDCCC"
 theme.fg_focus   = "#F0DFAF"
-theme.fg_urgent  = "#CC9393"
+theme.fg_urgent  = "#FFFFFF"
 theme.bg_normal  = "#1E2320"
 theme.bg_focus   = "#3F3F3F"
-theme.bg_urgent  = "#3F3F3F"
+theme.bg_urgent  = "#FF0000"
 theme.bg_systray = theme.bg_normal
 -- }}}
 
