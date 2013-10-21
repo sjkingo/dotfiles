@@ -3,6 +3,7 @@ awful.rules = require("awful.rules")
 require("awful.autofocus")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
+local redshift = require("redshift")
 local scratch = require("scratch")
 local vicious = require("vicious")
 local wibox = require("wibox")
@@ -43,6 +44,9 @@ editor_cmd = terminal .. " -e " .. editor
 
 modkey = "Mod4"
 altkey = "Mod1"
+
+-- enable redshift
+redshift.init("/home/sam/.config/redshift.conf", 1)
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
@@ -247,6 +251,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
     awful.key({ modkey,           }, "`", function () scratch.drop(terminal, "top", "center", 1, 0.5) end),
+    awful.key({ modkey,           }, "r", redshift.toggle),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
