@@ -6,11 +6,14 @@ import shutil
 FILES_LIST = 'files.list'
 
 def confirm(prompt_prefix):
-    answer = raw_input(prompt_prefix + ' [y/n] ')
-    if answer.lower() == 'y':
+    answer = raw_input(prompt_prefix + ' [y/n/q] ')
+    a = answer.lower()
+    if a == 'y':
         return True
-    else:
+    elif a == 'n':
         return False
+    else:
+        exit(0)
 
 def install_file(src, dest, write_backup=False):
     if os.path.lexists(dest):
