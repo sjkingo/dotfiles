@@ -12,9 +12,6 @@ gtk/gmrunrc ~/.gmrunrc
 
 gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
-hg/hgrc ~/.hgrc
-hg/hgignore ~/.hgignore
-
 irssi ~/.irssi
 
 mail/fetchmailrc ~/.fetchmailrc

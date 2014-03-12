@@ -1,8 +1,0 @@
-[ui]
-username=Sam Kingston <sam@sjkwi.com.au>
-ignore=~/.hgignore
-style=compact
-
-[extensions]
-hgext.fetch=
-hgext.color=

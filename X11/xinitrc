@@ -11,6 +11,7 @@ urxvt256cd &
 xscreensaver &
 xbindkeys &
 xsetroot -cursor_name left_ptr
+setxkbmap -option "terminate:ctrl_alt_bksp"
 /home/sam/bin/rotate_wallpaper.sh &
 
 export BROWSER="`which google-chrome`"

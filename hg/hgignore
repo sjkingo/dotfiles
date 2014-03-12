@@ -1,7 +1,0 @@
-syntax: glob
-*.pyc
-*~
-*.o
-.*.*.swp
-*.cache
-.sconsign.dblite
