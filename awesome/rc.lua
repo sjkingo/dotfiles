@@ -146,7 +146,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "top", screen = s, height = 24 })
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
@@ -195,7 +195,7 @@ alsawidget = wibox.widget.textbox()
 vicious.register(alsawidget, vicious.widgets.volume, "<span color='white'>Volume:</span> $1% ($2)", 7, "Master")
 
 weatherwidget = wibox.widget.textbox()
-vicious.register(weatherwidget, vicious.widgets.weather, "<span color='white'>Weather:</span> ${tempc}°С (${humid}% humidity)", 3600, "YBBN")
+vicious.register(weatherwidget, vicious.widgets.weather, "<span color='white'>Weather:</span> ${tempc}°С (${humid}% humidity)", 3600, "YKRY")
 
 local statusbar_left = wibox.layout.fixed.horizontal()
 statusbar_left:add(alsawidget)
@@ -219,7 +219,7 @@ statusbar_right:add(datewidget)
 local bottom_bar = wibox.layout.align.horizontal()
 bottom_bar:set_left(statusbar_left)
 bottom_bar:set_right(statusbar_right)
-statusbar = awful.wibox({ position = "bottom"})
+statusbar = awful.wibox({ position = "bottom", height = 24 })
 statusbar:set_widget(bottom_bar)
 -- }}}
 
