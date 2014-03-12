@@ -41,6 +41,14 @@ if [ -d /opt/crosstool-ng ] ; then
     export PATH="$PATH:/opt/crosstool-ng/bin"
 fi
 
+if [ -d ~/webapps ] ; then
+    export WORKON_HOME=~/webapps
+    which virtualenvwrapper.sh >/dev/null 2>&1
+    if [ $? -eq 0 ] ; then
+        source `which virtualenvwrapper.sh`
+    fi
+fi
+
 if [ -r ~/.pythonrc ] ; then
     export PYTHONSTARTUP=~/.pythonrc
 fi
