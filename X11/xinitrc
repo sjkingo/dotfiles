@@ -15,8 +15,8 @@ xsetroot -cursor_name left_ptr
 setxkbmap -option "terminate:ctrl_alt_bksp"
 /home/sam/bin/rotate_wallpaper.sh &
 
-export BROWSER="`which google-chrome`"
+export BROWSER="`which firefox`"
 
-google-musicmanager
+xset -dpms
 
 exec -l $SHELL -c "$SSH_AGENT /usr/bin/awesome"
