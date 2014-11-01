@@ -68,7 +68,7 @@ layouts =
 
 -- {{{ Tags
 tags = {
-    names  = { 1, "chrome", "pidgin", 4, 5, 6, 7, "music", "virtualbox" },
+    names  = { 1, "chrome", "pidgin", 4, 5, 6, 7, "teamviewer", "virtualbox" },
     layout = { 
         awful.layout.suit.tile,
         awful.layout.suit.tile,
@@ -77,7 +77,7 @@ tags = {
         awful.layout.suit.tile,
         awful.layout.suit.tile,
         awful.layout.suit.tile,
-        awful.layout.suit.tile,
+        awful.layout.suit.floating,
         awful.layout.suit.max
     }
 }
@@ -367,6 +367,8 @@ awful.rules.rules = {
     -- flash player 11 full screen
     { rule = { class = "Exe" },
       properties = { floating = true } },
+    { rule = { class = "TeamViewer.exe" },
+      properties = { floating = true, tag = tags[1][8] } },
 
     -- move to tag
     { rule = { class = "Google-chrome" },
