@@ -63,6 +63,7 @@ alias ll="ls -Fhl"
 alias lsa="ls -aFhl"
 alias rm="rm -i"
 alias w="w -f"
+alias y2mp3="youtube-dl -x --audio-format mp3"
 
 shopt -s cdspell
 shopt -s checkwinsize
