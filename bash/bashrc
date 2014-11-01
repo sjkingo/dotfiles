@@ -31,8 +31,9 @@ fi
 if [ -d ~/scripts ] ; then
     export PATH="$PATH:$HOME/scripts"
 fi
-if [ -d ~/android-sdk ] ; then
-    export PATH="$PATH:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools:$HOME/android-sdk/android-studio/bin"
+a=$HOME/android-sdk-linux
+if [ -d $a ] ; then
+    export PATH="$PATH:$a/tools:$a/platform-tools"
 fi
 if [ -d /opt/bin ] ; then
     export PATH="$PATH:/opt/bin"
@@ -47,6 +48,9 @@ if [ -d ~/webapps ] ; then
     if [ $? -eq 0 ] ; then
         source `which virtualenvwrapper.sh`
     fi
+fi
+if [ -d ~/android-studio/bin ] ; then
+    export PATH="$PATH:$HOME/android-studio/bin"
 fi
 
 if [ -r ~/.pythonrc ] ; then
