@@ -1,14 +1,14 @@
 "nemo --no-desktop"
-  m:0x0 + c:127
+  m:0x0 + c:82
 
 "amixer sset Master toggle"
   m:0x0 + c:121
 
 "amixer sset Master 5%-"
-  m:0x0 + c:122
+  m:0x0 + c:106
 
 "amixer sset Master 5%+"
-  m:0x0 + c:123
+  m:0x0 + c:63
 
 "cmus-remote -u"
   m:0x0 + c:172
