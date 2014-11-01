@@ -32,6 +32,7 @@ vim/vimrc ~/.vimrc
 
 X11/xinitrc ~/.xinitrc
 X11/xinitrc ~/.Xsession
+X11/Xresources ~/.Xdefaults
 X11/Xresources ~/.Xresources
 X11/xbindkeysrc ~/.xbindkeysrc
 X11/redshift.conf ~/.config/redshift.conf
