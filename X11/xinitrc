@@ -14,6 +14,7 @@ xbindkeys &
 xsetroot -cursor_name left_ptr
 setxkbmap -option "terminate:ctrl_alt_bksp"
 /home/sam/bin/rotate_wallpaper.sh &
+pnmixer &
 
 export BROWSER="`which firefox`"
 
