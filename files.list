@@ -14,9 +14,6 @@ gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 irssi ~/.irssi
 
-mail/fetchmailrc ~/.fetchmailrc
-mail/devnull ~/.fetchmaill-devnull
-
 misc/gdbinit ~/.gdbinit
 misc/rtorrent.rc ~/.rtorrent.rc
 
