@@ -1,4 +1,4 @@
-"nemo --no-desktop"
+"pcmanfm"
   m:0x0 + c:82
 
 "amixer sset Master toggle"
