@@ -13,8 +13,6 @@ gtk/fonts.conf ~/.config/fontconfig/fonts.conf
 
 gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
-irssi ~/.irssi
-
 misc/gdbinit ~/.gdbinit
 misc/rtorrent.rc ~/.rtorrent.rc
 
