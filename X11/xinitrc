@@ -9,14 +9,12 @@ export GPG_AGENT_INFO
 keychain
 
 urxvt256cd &
-xscreensaver &
 xbindkeys &
 xsetroot -cursor_name left_ptr
-setxkbmap -option "terminate:ctrl_alt_bksp"
-/home/sam/bin/rotate_wallpaper.sh &
-pnmixer &
+/home/sam/bin/rotate_wallpaper.sh /home/sam/Pictures/Wallpapers/NYC &
+volumeicon &
 
-export BROWSER="`which firefox`"
+export BROWSER="`which google-chrome`"
 
 xset -dpms
 
