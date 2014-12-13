@@ -3,19 +3,17 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 gnome-keyring-daemon
-
 eval $(gpg-agent --daemon)
 export GPG_AGENT_INFO
 keychain
 
+xsetroot -cursor_name left_ptr
+xset -dpms
+
+export BROWSER="`which google-chrome`"
 urxvt256cd &
 xbindkeys &
-xsetroot -cursor_name left_ptr
 /home/sam/bin/rotate_wallpaper.sh /home/sam/Pictures/Wallpapers/NYC &
 volumeicon &
 
-export BROWSER="`which google-chrome`"
-
-xset -dpms
-
-exec -l $SHELL -c "$SSH_AGENT /usr/bin/awesome"
+exec -l $SHELL -c "/usr/bin/awesome"
