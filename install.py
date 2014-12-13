@@ -15,12 +15,13 @@ def confirm(prompt_prefix):
     else:
         exit(0)
 
-def install_file(src, dest, write_backup=False):
+def install_file(src, dest, write_backup=False, verbose=False):
     if os.path.lexists(dest):
         # return if this file has already been installed, or confirm to override if it hasn't
         try:
             if os.path.samefile(src, dest):
-                print('%s has already been installed to %s' % (src, dest))
+                if verbose:
+                    print('%s has already been installed to %s' % (src, dest))
                 return
         except OSError:
             pass
@@ -72,7 +73,7 @@ def main(config):
             assert len(fields) == 2
             src = os.path.join(source_dir, fields[0])
             dest = os.path.abspath(os.path.expanduser(fields[1]))
-            install_file(src, dest, config.backup)
+            install_file(src, dest, config.backup, verbose=config.verbose)
 
 
 if __name__ == '__main__':
@@ -80,6 +81,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='dotfiles installer')
     parser.add_argument('-n', '--no-backup', dest='backup', action='store_false',
             help='Disable the writing of backup files if destination files exist')
+    parser.add_argument('-v', '--verbose', dest='verbose', action='store_true',
+            help='Be verbose when updating symlinks')
     args = parser.parse_args()
 
     main(args)
