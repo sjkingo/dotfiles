@@ -22,6 +22,7 @@ mplayer/mplayer.desktop ~/.local/share/applications/mplayer.desktop
 
 python/pythonrc ~/.pythonrc
 python/local-packages ~/.local/lib/python2.7/site-packages
+python/pypirc ~/.pypirc
 pywkhtmltopdf ~/.local/lib/python2.7/site-packages/pywkhtmltopdf
 
 vim ~/.vim
