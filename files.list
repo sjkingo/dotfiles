@@ -4,6 +4,8 @@ bash/bashrc ~/.bashrc
 bash/bash_profile ~/.bash_profile
 bash/bash_logout ~/.bash_logout
 
+duplicity/duplicity.filelist ~/.duplicity.filelist
+
 git/gitconfig ~/.gitconfig
 
 gtk/gtkrc-2.0 ~/.gtkrc-2.0

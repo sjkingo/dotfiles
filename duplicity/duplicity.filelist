@@ -1,0 +1,21 @@
++ /home/sam/.VirtualBox/VirtualBox.xml
++ /home/sam/.VirtualBox/*.dat
++ /home/sam/.VirtualBox/*.crt
++ /home/sam/.dropbox.token_store.txt
++ /home/sam/.config
++ /home/sam/.gnupg
++ /home/sam/.purple
++ /home/sam/.ssh
++ /home/sam/Documents
++ /home/sam/git-bkp
++ /home/sam/sig.png
++ /home/sam/WFS/artwork
++ /home/sam/WFS/wfsltd_ssl
++ /srv/videos/tv/cc.txt
++ /etc/fstab
++ /etc/samba/smb.conf
++ /etc/yum.repos.d
++ /etc/X11/xorg.conf.d
++ /etc/sysconfig/network
++ /etc/sysconfig/network-scripts/ifcfg-*
+**
