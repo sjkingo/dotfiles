@@ -17,7 +17,7 @@ URxvt.mouseWheelScrollPage:     false
 ! Clipboard and url matcher for rxvt-unicode.
 ! Requires the following perl extensions: perl-Clipboard
 URxvt.perl-ext-common:          default,matcher,clipboard
-URxvt.url-launcher:             /bin/firefox
+URxvt.url-launcher:             /bin/google-chrome
 URxvt.matcher.button:           1
 URxvt.colorUL:                  #4682B4
 
