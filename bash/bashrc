@@ -36,6 +36,7 @@ alias grep="grep --color"
 alias ll="ls -Fhl"
 alias rm="rm -i"
 alias y2mp3="youtube-dl -x --audio-format mp3"
+alias paste="nc termbin.com 9999"
 
 shopt -s cdspell
 shopt -s checkwinsize
