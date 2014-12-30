@@ -8,10 +8,9 @@ if [ -r /etc/bashrc ] ; then
 fi
 
 export EDITOR="`which vim`"
-export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] "
+#export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] "
+export PS1="\[\033[32m\]\u\[\033[0m\]@\[\033[32m\]\h\[\033[0m\]:\[\033[33m\]\w\[\033[0m\] \$ "
 export PGUSER="postgres"
-export TERM="xterm-256color"
-export COLORTERM="urxvt256cc"
 
 export GPGKEY=482EFAF8
 

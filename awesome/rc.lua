@@ -37,7 +37,7 @@ theme_path = "/home/sam/.config/awesome/zenburn.lua"
 beautiful.init(theme_path)
 
 -- note client version of urxvt - requires the daemon to be running
-terminal = "urxvt256cc"
+terminal = "gnome-terminal"
 run = "gmrun"
 editor = os.getenv("EDITOR") or "/usr/bin/vim"
 editor_cmd = terminal .. " -e " .. editor
