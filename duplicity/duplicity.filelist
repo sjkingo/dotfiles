@@ -9,6 +9,14 @@
 + /home/sam/.ssh
 + /home/sam/Documents
 + /home/sam/git-bkp
+- /home/sam/prime/primeco_web/bin
+- /home/sam/prime/primeco_web/include
+- /home/sam/prime/primeco_web/lib
+- /home/sam/prime/primeco_web/lib64
+- /home/sam/prime/primeco_web/src
+- /home/sam/prime/primeco_web/pip-selfcheck.json
+- /home/sam/prime/primeco_web/primeco/.git
++ /home/sam/prime
 + /home/sam/sig.png
 + /home/sam/WFS/artwork
 + /home/sam/WFS/wfsltd_ssl
