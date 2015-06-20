@@ -367,6 +367,9 @@ awful.rules.rules = {
     -- flash player 11 full screen
     { rule = { class = "Exe" },
       properties = { floating = true } },
+    -- chrome popups such as pushbullet
+    { rule = { role = "pop-up" },
+      properties = { floating = true } },
     { rule = { class = "TeamViewer.exe" },
       properties = { floating = true, tag = tags[1][8] } },
 
