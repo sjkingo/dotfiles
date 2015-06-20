@@ -15,6 +15,7 @@ xbindkeys &
 /home/sam/bin/rotate_wallpaper.sh /home/sam/Pictures/Wallpapers/NYC &
 volumeicon &
 rygel &
+google-musicmanager &
 dropbox start
 
 exec -l $SHELL -c "/usr/bin/awesome"
