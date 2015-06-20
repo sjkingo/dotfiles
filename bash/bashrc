@@ -21,10 +21,6 @@ shopt -s histappend
 if [ -d ~/bin ] ; then
     export PATH="$PATH:$HOME/bin"
 fi
-a=$HOME/android-sdk-linux
-if [ -d $a ] ; then
-    export PATH="$PATH:$a/tools:$a/platform-tools"
-fi
 
 if [ -r ~/.pythonrc ] ; then
     export PYTHONSTARTUP=~/.pythonrc
