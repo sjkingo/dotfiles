@@ -46,3 +46,6 @@ colorscheme solarized
 " bash-style tabcomp
 set wildmenu
 set wildmode=list:longest
+
+" pathogen
+execute pathogen#infect()
