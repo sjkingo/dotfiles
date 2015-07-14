@@ -47,5 +47,8 @@ colorscheme solarized
 set wildmenu
 set wildmode=list:longest
 
+" recurse upwards for ctags
+set tags=./tags;
+
 " pathogen
 execute pathogen#infect()
