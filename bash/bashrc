@@ -34,6 +34,11 @@ alias y2mp3="youtube-dl -x --audio-format mp3"
 alias paste="nc termbin.com 9999"
 alias pip_upgrade='pip install --upgrade $(pip freeze | egrep -v -- '^-e' | cut -d '=' -f 1)'
 
+function workon {
+    gnome-terminal -x activate_virtualenv "$1"
+    gnome-terminal -x activate_virtualenv "$1"
+}
+
 shopt -s cdspell
 shopt -s checkwinsize
 
