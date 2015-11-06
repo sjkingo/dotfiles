@@ -372,6 +372,10 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "TeamViewer.exe" },
       properties = { floating = true, tag = tags[1][8] } },
+    { rule = { class = "Qemu-system-i386" },
+      properties = { floating = true } },
+    { rule = { name = "Authy" },
+      properties = { floating = true } },
 
     -- move to tag
     { rule = { class = "Google-chrome" },
