@@ -8,3 +8,6 @@ username = sjkingo
 #[test]
 #repository = https://testpypi.python.org/pypi
 #username = sjkingo_test
+
+[wheel]
+universal = 1
