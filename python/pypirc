@@ -3,4 +3,4 @@ index-servers =
     pypi
 
 [pypi]
-username:sjkingo
+username = sjkingo
