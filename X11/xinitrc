@@ -1,21 +1,49 @@
+#!/usr/bin/env bash
+
+# This is the graphical logon script that will be executed by the display
+# manager (gdm, etc) when logging in with the "User script" session. It
+# requires the xorg-x11-xinit-session package to be installed.
+#
+# This file should be symlinked as both ~/.xinitrc and ~/.xsession:
+#
+#   ~/.xinitrc: sourced by startx
+#   ~/.xsession: sourced by DM
+#
+# It must be executable.
+
 . /etc/X11/xinit/xinitrc.d/*
 . /etc/X11/xinit/xinitrc-common
+
+# Set up X resources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-
-gnome-keyring-daemon
-eval $(gpg-agent --daemon)
-export GPG_AGENT_INFO
-keychain
-
 xsetroot -cursor_name left_ptr
 xset -dpms
 
-export BROWSER="`which google-chrome`"
-xbindkeys &
-/home/sam/bin/rotate_wallpaper.sh /home/sam/Pictures/Wallpapers/NYC &
-volumeicon &
-rygel &
-google-musicmanager &
-dropbox start
+# Switch off laptop screen
+xrandr --output LVDS1 --off
 
-exec -l $SHELL -c "/usr/bin/awesome"
+#gnome-keyring-daemon
+#eval $(gpg-agent --daemon)
+#export GPG_AGENT_INFO
+#keychain
+
+# Misc. session programs
+volumeicon &
+xbindkeys &
+
+#/home/sam/bin/rotate_wallpaper.sh /home/sam/Pictures/Wallpapers/NYC &
+#rygel &
+#google-musicmanager &
+#dropbox start
+
+# Set wallpaper. Requires feh and variety from
+# http://www.rpmfind.net/linux/rpm2html/search.php?query=variety
+variety &
+
+# Session-wide variables
+export BROWSER="`which google-chrome`"
+export EDITOR="`which vim`"
+[[ -d ~/bin ]] && export PATH="$PATH:$HOME/bin"
+ulimit -c 4000
+
+exec awesome

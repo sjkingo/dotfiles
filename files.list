@@ -27,10 +27,13 @@ python/local-packages ~/.local/lib/python2.7/site-packages
 python/pypirc ~/.pypirc
 pywkhtmltopdf ~/.local/lib/python2.7/site-packages/pywkhtmltopdf
 
+variety/set_wallpaper ~/.config/variety/scripts/set_wallpaper
+variety/variety.conf ~/.config/variety/variety.conf
+
 vim ~/.vim
 vim/vimrc ~/.vimrc
 
 X11/xinitrc ~/.xinitrc
-X11/xinitrc ~/.Xsession
+X11/xinitrc ~/.xsession
 X11/xbindkeysrc ~/.xbindkeysrc
 X11/redshift.conf ~/.config/redshift.conf
