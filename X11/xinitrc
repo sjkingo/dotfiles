@@ -18,6 +18,7 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 xsetroot -cursor_name left_ptr
 xset -dpms
+setxkbmap -option terminate:ctrl_alt_bksp
 
 # Switch off laptop screen
 xrandr --output LVDS1 --off
