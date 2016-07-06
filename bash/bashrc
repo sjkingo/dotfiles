@@ -29,7 +29,10 @@ alias y2mp3="youtube-dl -x --audio-format mp3"
 alias paste="nc termbin.com 9999"
 alias pip_upgrade='pip install --upgrade pip $(pip freeze | egrep -v -- '^-e' | cut -d '=' -f 1)'
 alias pp="pass -c Finance/paypal.com"
-alias ut2004="cd /opt/games/ut2004/System && ./ut2004-bin-linux-amd64"
+
+alias ut2004="cd /opt/ut2004/System && ./ut2004-bin-linux-amd64"
+alias sof="cd /home/sam/.wine/drive_c/Program\ Files\ \(x86\)/Raven/SOF\ PLATINUM && __GL_ExtensionStringVersion=17700 wine sof.exe"
+alias urt="cd /srv/installs/Games/UrbanTerror42 && ./Quake3-UrT.x86_64"
 
 function mount_iso {
     if [ -z "$1" ] ; then
