@@ -11,3 +11,7 @@
 
 [alias]
     bo = reset --soft HEAD^
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
