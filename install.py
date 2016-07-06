@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 import shutil
@@ -6,7 +6,7 @@ import shutil
 FILES_LIST = 'files.list'
 
 def confirm(prompt_prefix):
-    answer = raw_input(prompt_prefix + ' [y/n/q] ')
+    answer = input(prompt_prefix + ' [y/n/q] ')
     a = answer.lower()
     if a == 'y':
         return True
