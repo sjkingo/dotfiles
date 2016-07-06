@@ -21,6 +21,8 @@ if [ -r ~/.pythonrc ] ; then
     export PYTHONSTARTUP=~/.pythonrc
 fi
 
+export WINEDEBUG=-all
+
 alias df="df -h"
 alias grep="grep --color"
 alias ll="ls -Fhl"
