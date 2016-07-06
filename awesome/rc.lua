@@ -189,7 +189,7 @@ memwidget = wibox.widget.textbox()
 vicious.register(memwidget, vicious.widgets.mem, "<span color='white'>Memory:</span> $1% used ($6% swap)", 10)
 
 netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, "<span color='white'>wired:</span> ${enp3s0f2 down_mb}/${enp3s0f2 up_mb} Mbps", 4)
+vicious.register(netwidget, vicious.widgets.net, "<span color='white'>wired:</span> ${br0 down_mb}/${br0 up_mb} Mbps", 4)
 
 alsawidget = wibox.widget.textbox()
 vicious.register(alsawidget, vicious.widgets.volume, "<span color='white'>Volume:</span> $1% ($2)", 7, "Master")
