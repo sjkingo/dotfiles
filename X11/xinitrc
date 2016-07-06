@@ -31,12 +31,11 @@ xrandr --output LVDS1 --off
 volumeicon &
 xbindkeys &
 
-#/home/sam/bin/rotate_wallpaper.sh /home/sam/Pictures/Wallpapers/NYC &
 #rygel &
 #google-musicmanager &
 #dropbox start
 
-# Set wallpaper. Requires feh and variety from
+# Set wallpaper. Requires feh, python-gobject and variety from
 # http://www.rpmfind.net/linux/rpm2html/search.php?query=variety
 variety &
 
