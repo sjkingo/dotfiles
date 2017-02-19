@@ -31,6 +31,11 @@ if [ -r ~/.pythonrc ] ; then
     export PYTHONSTARTUP=~/.pythonrc
 fi
 
+LOCAL_BIN="$HOME/.local/bin"
+if [ -d $LOCAL_BIN ] ; then
+    export PATH="$LOCAL_BIN:$PATH"
+fi
+
 export WINEDEBUG=-all
 
 alias df="df -h"
