@@ -8,6 +8,7 @@ if [ -r /etc/bashrc ] ; then
 fi
 
 export PS1="\W/ \[\033[01;31m\]\$\[\033[00m\] "
+
 export PGUSER="postgres"
 
 export GPGKEY=482EFAF8
