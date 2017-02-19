@@ -68,7 +68,7 @@ layouts =
 
 -- {{{ Tags
 tags = {
-    names  = { 1, "chrome", "pidgin", 4, 5, 6, 7, "teamviewer", "virtualbox" },
+    names  = { " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 " , " 9 " },
     layout = { 
         awful.layout.suit.tile,
         awful.layout.suit.tile,
@@ -77,7 +77,7 @@ tags = {
         awful.layout.suit.tile,
         awful.layout.suit.tile,
         awful.layout.suit.tile,
-        awful.layout.suit.floating,
+        awful.layout.suit.tile,
         awful.layout.suit.max
     }
 }
@@ -168,51 +168,41 @@ end
 -- }}}
 
 -- {{{ Status bar
-spacerwidget = wibox.widget.textbox("   ")
-spacerwidget:set_align("right")
+
+spacerwidget = wibox.widget.textbox(" ")
+
+local statusbar_left = wibox.layout.fixed.horizontal()
+
+memgraph_widget = awful.widget.graph()
+memgraph_widget:set_width(75)
+memgraph_widget:set_background_color("#333333")
+memgraph_widget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"}, 
+                    {1, "#AECF96" }}})
+vicious.register(memgraph_widget, vicious.widgets.mem, "$1")
+statusbar_left:add(memgraph_widget)
+statusbar_left:add(spacerwidget)
+
+cpugraph_widget = awful.widget.graph()
+cpugraph_widget:set_width(75)
+cpugraph_widget:set_background_color("#333333")
+cpugraph_widget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"}, 
+                    {1, "#AECF96" }}})
+vicious.register(cpugraph_widget, vicious.widgets.cpu, "$1")
+statusbar_left:add(cpugraph_widget)
+statusbar_left:add(spacerwidget)
+
+netgraph_widget = awful.widget.graph()
+netgraph_widget:set_width(75)
+netgraph_widget:set_background_color("#333333")
+netgraph_widget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"}, 
+                    {1, "#AECF96" }}})
+vicious.register(netgraph_widget, vicious.widgets.net, "$1")
+statusbar_left:add(netgraph_widget)
+
+local statusbar_right = wibox.layout.fixed.horizontal()
 
 datewidget = wibox.widget.textbox()
 vicious.register(datewidget, vicious.widgets.date, "%c", 1)
-
-cputempwidget = wibox.widget.textbox()
-vicious.register(cputempwidget, vicious.widgets.thermal, "<span color='white'>Thermal:</span> $1°С", 2, {"coretemp.0", "core"})
-
-cpulabelwidget = wibox.widget.textbox("<span color='white'>CPU: </span>")
-cpuwidget = awful.widget.graph()
-cpuwidget:set_width(50)
-cpuwidget:set_background_color("#333333")
-cpuwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"}, 
-                    {1, "#AECF96" }}})
-vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
-
-memwidget = wibox.widget.textbox()
-vicious.register(memwidget, vicious.widgets.mem, "<span color='white'>Memory:</span> $1% used ($6% swap)", 10)
-
-netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, "<span color='white'>wired:</span> ${br0 down_mb}/${br0 up_mb} Mbps", 4)
-
-alsawidget = wibox.widget.textbox()
-vicious.register(alsawidget, vicious.widgets.volume, "<span color='white'>Volume:</span> $1% ($2)", 7, "Master")
-
-weatherwidget = wibox.widget.textbox()
-vicious.register(weatherwidget, vicious.widgets.weather, "<span color='white'>Weather:</span> ${tempc}°С (${humid}% humidity)", 3600, "YKRY")
-
-local statusbar_left = wibox.layout.fixed.horizontal()
-statusbar_left:add(alsawidget)
-statusbar_left:add(spacerwidget)
-statusbar_left:add(weatherwidget)
-
--- Layout
-local statusbar_right = wibox.layout.fixed.horizontal()
-statusbar_right:add(netwidget)
-statusbar_right:add(spacerwidget)
-statusbar_right:add(memwidget)
-statusbar_right:add(spacerwidget)
-statusbar_right:add(cpulabelwidget)
-statusbar_right:add(cpuwidget)
-statusbar_right:add(spacerwidget)
-statusbar_right:add(cputempwidget)
-statusbar_right:add(spacerwidget)
 statusbar_right:add(datewidget)
 
 -- Add the bottom bar
@@ -370,8 +360,6 @@ awful.rules.rules = {
     -- chrome popups such as pushbullet
     { rule = { role = "pop-up" },
       properties = { floating = true } },
-    { rule = { class = "TeamViewer.exe" },
-      properties = { floating = true, tag = tags[1][8] } },
     { rule = { class = "Qemu-system-i386" },
       properties = { floating = true } },
     { rule = { name = "Authy" },
