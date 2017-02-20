@@ -22,7 +22,8 @@ fi
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-export HISTFILESIZE="5000"
+export HISTSIZE=5000
+export HISTFILESIZE=10000
 export HISTCONTROL="ignoreboth"
 export PROMPT_COMMAND="history -a"
 shopt -s histappend
