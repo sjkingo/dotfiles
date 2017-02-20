@@ -5,8 +5,6 @@ bash/bash_profile ~/.bash_profile
 bash/bash_logout ~/.bash_logout
 bash/dir_colors ~/.dir_colors
 
-duplicity/duplicity.filelist ~/.duplicity.filelist
-
 fontconfig/fonts.conf ~/.config/fontconfig/fonts.conf
 
 git/gitconfig ~/.gitconfig
@@ -24,9 +22,6 @@ mplayer/mplayer.desktop ~/.local/share/applications/mplayer.desktop
 
 python/pythonrc ~/.pythonrc
 python/pypirc ~/.pypirc
-
-variety/set_wallpaper ~/.config/variety/scripts/set_wallpaper
-variety/variety.conf ~/.config/variety/variety.conf
 
 vim ~/.vim
 vim/vimrc ~/.vimrc
