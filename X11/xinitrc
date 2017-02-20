@@ -26,7 +26,10 @@ eval $(gpg-agent --daemon)
 export GPG_AGENT_INFO
 keychain
 
+/home/sam/bin/rotate_wallpaper.sh
+
 # Misc. session programs
+redshift &
 volumeicon &
 xbindkeys &
 dropbox start
