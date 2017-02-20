@@ -460,10 +460,10 @@ awful.rules.rules = {
     },
 
     --- Specific tags
-    { rule = { class = "Google-chrome" },
-      properties = { screen = 1, tag = "2" } },
+    { rule = { class = "Google-chrome-unstable" },
+      properties = { screen = 1, tag = " 2 " } },
     { rule = { class = "VirtualBox" },
-      properties = { screen = 1, tag = "9" } },
+      properties = { screen = 1, tag = " 9 " } },
 }
 -- }}}
 
