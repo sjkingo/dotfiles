@@ -442,6 +442,7 @@ awful.rules.rules = {
     { rule_any = {
         class = {
           "MPlayer",
+          "Gnome-mplayer",
           "pinentry",
           "qemu",
           "Qemu-system-i386",
