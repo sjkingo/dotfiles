@@ -32,9 +32,11 @@ if [ -r ~/.pythonrc ] ; then
     export PYTHONSTARTUP=~/.pythonrc
 fi
 
-LOCAL_BIN="$HOME/.local/bin"
-if [ -d $LOCAL_BIN ] ; then
-    export PATH="$LOCAL_BIN:$PATH"
+if [ -d "$HOME/.local/bin" ] ; then
+    export PATH="$PATH:$HOME/.local/bin"
+fi
+if [ -d "$HOME/.cargo/bin" ] ; then
+    export PATH="$PATH:$HOME/.cargo/bin"
 fi
 
 export WINEDEBUG=-all
