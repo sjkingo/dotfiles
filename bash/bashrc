@@ -41,6 +41,8 @@ fi
 
 export WINEDEBUG=-all
 
+export MAILCHECK=3600
+
 alias df="df -h"
 alias grep="grep --color"
 alias ll="ls -Fhl"
