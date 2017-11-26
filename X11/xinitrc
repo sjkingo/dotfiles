@@ -30,9 +30,10 @@ keychain
 
 # Misc. session programs
 redshift &
-volumeicon &
+pasystray &
 xbindkeys &
 dropbox start
+xscreensaver -no-splash &
 
 # Session-wide variables
 export BROWSER="`which google-chrome`"
