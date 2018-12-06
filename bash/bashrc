@@ -3,14 +3,15 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
+# Set up basic shell options
 if [ -r /etc/bashrc ] ; then
     source /etc/bashrc
 fi
+eval `dircolors ~/.dir_colors`
+shopt -s cdspell
+shopt -s checkwinsize
 
-export PS1="\W/ \[\033[01;31m\]\$\[\033[00m\] "
-
-export PGUSER="postgres"
-
+# Fix up gpg and ssh agent
 export GPGKEY=482EFAF8
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
  	gpg-connect-agent /bye >/dev/null 2>&1
@@ -22,43 +23,44 @@ fi
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-export HISTSIZE=5000
-export HISTFILESIZE=10000
+# History
 export HISTCONTROL="ignoreboth"
+export HISTFILESIZE=10000
+export HISTSIZE=5000
 export PROMPT_COMMAND="history -a"
 shopt -s histappend
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# Python
 if [ -r ~/.pythonrc ] ; then
     export PYTHONSTARTUP=~/.pythonrc
 fi
-
-if [ -d "$HOME/.local/bin" ] ; then
+if [ -d ~/.local/bin ] ; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
-if [ -d "$HOME/.cargo/bin" ] ; then
-    export PATH="$PATH:$HOME/.cargo/bin"
-fi
 
-export WINEDEBUG=-all
-
+# Exports
 export MAILCHECK=3600
+export PGUSER="postgres"
+export PS1="\W/ \[\033[01;31m\]\$\[\033[00m\] "
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
+# Aliases
 alias df="df -h"
+alias enc="gpg2 --encrypt -r sam@sjkwi.com.au $1"
 alias grep="grep --color"
 alias ll="ls -Fhl"
-alias rm="rm -i"
 alias pip_upgrade='pip install --upgrade pip $(pip freeze | egrep -v -- '^-e' | cut -d '=' -f 1)'
-alias enc="gpg2 --encrypt -r sam@sjkwi.com.au $1"
+alias rm="rm -i"
 
-alias ut2004="cd /opt/ut2004/System && ./ut2004-bin-linux-amd64"
+# Games
+export WINEDEBUG=-all
+alias duke3d="cd ~/.eduke32/autoload && ./eduke32 -usecwd -hduke3d_hrp_polymost.def"
 alias urt="cd /srv/installs/Games/UrbanTerror42 && ./Quake3-UrT.x86_64"
+alias ut2004="cd /opt/ut2004/System && ./ut2004-bin-linux-amd64"
+alias vc="cd ~/.wine/drive_c/Program\ Files\ \(x86\)/Mr\ DJ/Grand\ Theft\ Auto\ Vice\ City && wine gta-vc.exe ; cd -"
 
-function workon {
-    gnome-terminal -x activate_virtualenv "$1"
-    gnome-terminal -x activate_virtualenv "$1"
+useenv ()
+{
+    eval $(egrep -v '^#' $1 | xargs) ${@:2}
 }
-
-shopt -s cdspell
-shopt -s checkwinsize
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
