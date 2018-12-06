@@ -8,6 +8,7 @@ bash/dir_colors ~/.dir_colors
 fontconfig/fonts.conf ~/.config/fontconfig/fonts.conf
 
 git/gitconfig ~/.gitconfig
+git/gitignore_global ~/.gitignore_global
 
 gtk/gtkrc-2.0 ~/.gtkrc-2.0
 gtk/gtkrc-2.0 ~/.gtkrc-1.2-gnome2

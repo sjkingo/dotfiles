@@ -4,14 +4,31 @@
 
 [color]
     ui = auto
+
 [push]
-	default = simple
+    default = simple
+
 [diff]
-	algorithm = patience
+    algorithm = patience
 
 [alias]
-    bo = reset --soft HEAD^
+    undo = reset --soft HEAD^
+
 [commit]
-	gpgsign = true
+    gpgsign = true
+
 [gpg]
-	program = gpg2
+    program = gpg2
+
+[core]
+    quotepath = false
+    excludesfile = /home/sam/.gitignore_global
+
+[status]
+    showUntrackedFiles = all
+
+[transfer]
+    fsckobjects = true
+
+[merge]
+    conflictstyle = diff3
