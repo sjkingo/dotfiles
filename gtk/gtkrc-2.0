@@ -1,3 +1,4 @@
-include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
+#include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
+include "/usr/share/themes/Lounge/gtk-2.0/gtkrc"
 gtk-font-name = "Source Sans Pro 10"
-gtk-icon-theme-name = "gnome"
+gtk-icon-theme-name = "Lounge-aux"
