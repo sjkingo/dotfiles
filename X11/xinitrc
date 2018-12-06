@@ -17,22 +17,28 @@
 # Set up X resources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 xsetroot -cursor_name left_ptr
-xset -dpms
 setxkbmap -option terminate:ctrl_alt_bksp
+
+# Disable dpms and screen blanking
+#xset dpms 0 0 0
+#xset s off -dpms
 
 # Keyring and gpg agent
 gnome-keyring-daemon
 eval $(gpg-agent --daemon)
 export GPG_AGENT_INFO
+eval $(ssh-agent)
+export SSH_AUTH_SOCK
+export SSH_AGENT_PID
 keychain
 
 /home/sam/bin/rotate_wallpaper.sh
 
 # Misc. session programs
+sudo nm-applet &
 redshift &
 pasystray &
 xbindkeys &
-dropbox start
 xscreensaver -no-splash &
 
 # Session-wide variables
