@@ -17,9 +17,6 @@ gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 misc/rtorrent.rc ~/.rtorrent.rc
 
-mplayer ~/.mplayer
-mplayer/mplayer.desktop ~/.local/share/applications/mplayer.desktop
-
 mutt/muttrc ~/.muttrc
 mutt/muttrc-solarized-dark ~/.muttrc-solarized-dark
 
