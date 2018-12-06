@@ -50,7 +50,8 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/home/sam/.config/awesome/zenburn/theme.lua")
 
-terminal = "gnome-terminal"
+terminal = "/home/sam/bin/gnome-terminal-wrapper"
+
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
