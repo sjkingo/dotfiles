@@ -1,2 +1,0 @@
-Terminal = eval urxvt256cc
-TermExec = ${Terminal} -e
