@@ -187,7 +187,7 @@ w_date = wibox.widget {
 }
 vicious.register(w_date, vicious.widgets.date, "%c", 1)
 
-w_dam = awful.widget.watch('bash -c "/home/sam/bin/damlevel"', 3600)
+w_dam = awful.widget.watch('bash -c "/home/sam/damlevel/level.sh"', 3600)
 
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
