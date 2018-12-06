@@ -187,6 +187,8 @@ w_date = wibox.widget {
 }
 vicious.register(w_date, vicious.widgets.date, "%c", 1)
 
+w_dam = awful.widget.watch('bash -c "/home/sam/bin/damlevel"', 3600)
+
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 " }, s, awful.layout.layouts[2])
@@ -233,6 +235,7 @@ awful.screen.connect_for_each_screen(function(s)
             w_cpugraph,
             w_memgraph,
             w_netgraph,
+            w_dam,
         },
         nil, -- Empty middle
         { -- Right widgets
@@ -435,7 +438,8 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
+                     placement = awful.placement.no_overlap+awful.placement.no_offscreen,
+                     size_hints_honor = false
      }
     },
 
