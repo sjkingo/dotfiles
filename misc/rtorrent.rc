@@ -1,11 +1,11 @@
 max_uploads = 2
-download_rate = 2000
+download_rate = 1000
 upload_rate = 50
 
-directory = ./Downloads/torrents
-session = ./Downloads/torrents/.session
-
-schedule = watch_directory,5,5,load_start=./Downloads/*.torrent
+directory = /home/sam/Downloads/torrents
+session = /home/sam/Downloads/torrents/.session
 
 port_range = 6988-6988
 port_random = no
+
+protocol.encryption.set = require,require_RC4,allow_incoming,try_outgoing
