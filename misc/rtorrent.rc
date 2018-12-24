@@ -7,5 +7,3 @@ session = /home/sam/Downloads/torrents/.session
 
 port_range = 6988-6988
 port_random = no
-
-protocol.encryption.set = require,require_RC4,allow_incoming,try_outgoing
