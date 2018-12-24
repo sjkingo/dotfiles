@@ -40,6 +40,7 @@ redshift &
 pasystray &
 xbindkeys &
 xscreensaver -no-splash &
+nextcloud &
 
 # Session-wide variables
 export BROWSER="`which google-chrome`"
