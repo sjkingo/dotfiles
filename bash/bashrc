@@ -50,6 +50,7 @@ alias df="df -h"
 alias enc="gpg2 --encrypt -r sam@sjkwi.com.au $1"
 alias grep="grep --color"
 alias ll="ls -Fhl"
+alias pip="pip3"
 alias pip_upgrade='pip install --upgrade pip $(pip freeze | egrep -v -- '^-e' | cut -d '=' -f 1)'
 alias rm="rm -i"
 
@@ -63,4 +64,10 @@ alias vc="cd ~/.wine/drive_c/Program\ Files\ \(x86\)/Mr\ DJ/Grand\ Theft\ Auto\ 
 useenv ()
 {
     eval $(egrep -v '^#' $1 | xargs) ${@:2}
+}
+
+amend_date ()
+{
+    GIT_COMMITTER_DATE="$1" git commit --amend --no-edit --date "$1"
+    git log -n 1 | egrep 'commit|Date'
 }
