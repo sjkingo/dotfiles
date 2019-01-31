@@ -49,6 +49,7 @@ export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 alias df="df -h"
 alias enc="gpg2 --encrypt -r sam@sjkwi.com.au $1"
 alias grep="grep --color"
+alias gdb="gdb -q"
 alias ll="ls -Fhl"
 alias pip="pip3"
 alias pip_upgrade='pip install --upgrade pip $(pip freeze | egrep -v -- '^-e' | cut -d '=' -f 1)'
@@ -58,7 +59,7 @@ alias rm="rm -i"
 export WINEDEBUG=-all
 alias duke3d="cd ~/.eduke32/autoload && ./eduke32 -usecwd -hduke3d_hrp_polymost.def"
 alias urt="cd /srv/installs/Games/UrbanTerror42 && ./Quake3-UrT.x86_64"
-alias ut2004="cd /opt/ut2004/System && ./ut2004-bin-linux-amd64"
+alias ut2004="cd /srv/bigdata/sam/ut2004/System && ./ut2004-bin-linux-amd64"
 alias vc="cd ~/.wine/drive_c/Program\ Files\ \(x86\)/Mr\ DJ/Grand\ Theft\ Auto\ Vice\ City && wine gta-vc.exe ; cd -"
 
 useenv ()

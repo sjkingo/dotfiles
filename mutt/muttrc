@@ -1,4 +1,5 @@
 set folder=/var/spool/mail
 set mbox=+sam
+set pager=less
 
 source ~/.muttrc-solarized-dark
