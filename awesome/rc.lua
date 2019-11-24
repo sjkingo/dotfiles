@@ -51,6 +51,8 @@ end
 beautiful.init("/home/sam/.config/awesome/zenburn/theme.lua")
 
 terminal = "/home/sam/bin/gnome-terminal-wrapper"
+--terminal = "/usr/bin/gnome-terminal"
+gmrun = "/usr/bin/gmrun"
 
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
@@ -193,8 +195,6 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 " }, s, awful.layout.layouts[2])
 
-    -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
@@ -216,7 +216,6 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
-            s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
@@ -328,7 +327,7 @@ globalkeys = awful.util.table.join(
               {description = "select previous", group = "layout"}),
 
    -- Prompt
-    awful.key({ altkey },            "F2",     function () awful.screen.focused().mypromptbox:run() end,
+    awful.key({ altkey },            "F2",     function () awful.spawn(gmrun) end,
               {description = "run prompt", group = "launcher"})
 )
 

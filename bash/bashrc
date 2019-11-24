@@ -1,7 +1,7 @@
 # don't source for interactive shells
-if [[ $- != *i* ]] ; then
-    return
-fi
+#if [[ $- != *i* ]] ; then
+#    return
+#fi
 
 # Set up basic shell options
 if [ -r /etc/bashrc ] ; then
@@ -24,12 +24,12 @@ export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # History
-export HISTCONTROL="ignoreboth"
+export HISTCONTROL="ignoreboth:erasedups"
 export HISTFILESIZE=10000
 export HISTSIZE=5000
 export PROMPT_COMMAND="history -a"
 shopt -s histappend
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+. /usr/share/fzf/shell/key-bindings.bash
 
 # Python
 if [ -r ~/.pythonrc ] ; then
@@ -42,6 +42,7 @@ fi
 # Exports
 export MAILCHECK=3600
 export PGUSER="postgres"
+export PGPORT=54329
 export PS1="\W/ \[\033[01;31m\]\$\[\033[00m\] "
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
@@ -54,6 +55,7 @@ alias ll="ls -Fhl"
 alias pip="pip3"
 alias pip_upgrade='pip install --upgrade pip $(pip freeze | egrep -v -- '^-e' | cut -d '=' -f 1)'
 alias rm="rm -i"
+alias black_all="find . -name \*.py | grep -v migrations | xargs black -t py37 --line-length=120"
 
 # Games
 export WINEDEBUG=-all

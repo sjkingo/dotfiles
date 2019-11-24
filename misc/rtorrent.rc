@@ -1,6 +1,6 @@
-max_uploads = 2
-download_rate = 1000
-upload_rate = 50
+max_uploads = 4
+#download_rate = 1000
+upload_rate = 500
 
 directory = /home/sam/Downloads/torrents
 session = /home/sam/Downloads/torrents/.session
