@@ -21,10 +21,6 @@
 xsetroot -cursor_name left_ptr
 setxkbmap -option terminate:ctrl_alt_bksp
 
-# Disable dpms and screen blanking
-#xset dpms 0 0 0
-#xset s off -dpms
-
 # Keyring and gpg agent
 gnome-keyring-daemon
 eval $(gpg-agent --daemon)
@@ -34,21 +30,20 @@ export SSH_AUTH_SOCK
 export SSH_AGENT_PID
 keychain
 
-/home/sam/bin/rotate_wallpaper.sh
+#/home/sam/bin/rotate_wallpaper.sh
 
 # Misc. session programs
 nm-applet &
 redshift &
 pasystray &
-xbindkeys &
-xscreensaver -no-splash &
+#xbindkeys &
+#xscreensaver -no-splash &
 #nextcloud &
 
 # Session-wide variables
-export BROWSER="`which google-chrome`"
+export BROWSER="`which firefox`"
 export EDITOR="`which vim`"
 [[ -d ~/bin ]] && export PATH="$PATH:$HOME/bin"
 ulimit -c 4000
 
-compton -b
 exec awesome

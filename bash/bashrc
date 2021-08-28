@@ -74,3 +74,4 @@ amend_date ()
     GIT_COMMITTER_DATE="$1" git commit --amend --no-edit --date "$1"
     git log -n 1 | egrep 'commit|Date'
 }
+export GOPATH=$HOME/go
